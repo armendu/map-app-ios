@@ -11,6 +11,7 @@
 		C68943711F0D01230067254B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68943701F0D01230067254B /* CoreLocation.framework */; };
 		C68943731F0D01370067254B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68943721F0D01370067254B /* MapKit.framework */; };
 		C68943761F0D08A70067254B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68943751F0D08A70067254B /* ViewController.m */; };
+		C689437C1F0D3ADA0067254B /* ReportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C689437B1F0D3ADA0067254B /* ReportObject.m */; };
 		C6E63E671F0C0D05008E9A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E63E661F0C0D05008E9A54 /* main.m */; };
 		C6E63E6A1F0C0D05008E9A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E63E691F0C0D05008E9A54 /* AppDelegate.m */; };
 		C6E63E701F0C0D05008E9A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E63E6E1F0C0D05008E9A54 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		C68943721F0D01370067254B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C68943741F0D08A70067254B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C68943751F0D08A70067254B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C689437A1F0D3ADA0067254B /* ReportObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportObject.h; sourceTree = "<group>"; };
+		C689437B1F0D3ADA0067254B /* ReportObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportObject.m; sourceTree = "<group>"; };
 		C6E63E621F0C0D05008E9A54 /* TableViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E63E661F0C0D05008E9A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C6E63E681F0C0D05008E9A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				C6E63E9C1F0C0EE0008E9A54 /* TableViewCell.m */,
 				C689436C1F0CE2F80067254B /* DetailViewController.h */,
 				C689436D1F0CE2F80067254B /* DetailViewController.m */,
+				C689437A1F0D3ADA0067254B /* ReportObject.h */,
+				C689437B1F0D3ADA0067254B /* ReportObject.m */,
 				C6E63E6E1F0C0D05008E9A54 /* Main.storyboard */,
 				C6E63E711F0C0D05008E9A54 /* Assets.xcassets */,
 				C6E63E731F0C0D05008E9A54 /* LaunchScreen.storyboard */,
@@ -310,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C68943761F0D08A70067254B /* ViewController.m in Sources */,
+				C689437C1F0D3ADA0067254B /* ReportObject.m in Sources */,
 				C689436E1F0CE2F80067254B /* DetailViewController.m in Sources */,
 				C6E63E6A1F0C0D05008E9A54 /* AppDelegate.m in Sources */,
 				C6E63E9D1F0C0EE0008E9A54 /* TableViewCell.m in Sources */,

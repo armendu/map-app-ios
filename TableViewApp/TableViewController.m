@@ -9,30 +9,35 @@
 #import "TableViewController.h"
 #import "TableViewCell.h"
 #import "DetailViewController.h"
+#import "ReportObject.h"
 
 @interface TableViewController ()
+
+@property (nonatomic,strong) NSMutableArray *objectHolderArray;
 
 @end
 
 @implementation TableViewController
 
+-(NSMutableArray *)objectHolderArray{
+    if(!_objectHolderArray) _objectHolderArray = [[NSMutableArray alloc]init];
+    return _objectHolderArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _Latitude = @[@"1",
-                  @"Latitude2",
-                  @"Latitude3"];
-    _Longitude = @[@"Longitude1",
-                   @"Longitude2",
-                   @"Longitude3"];
-    _Status = @[@"Status1",
-                @"Status2",
-                @"Status3"];
+    NSString *url_string = [NSString stringWithFormat:@"http://192.168.0.104/android/getallreportsjson.php"];
+    NSURL *apiURL = [NSURL URLWithString:url_string];
+    NSData *jsonData = [NSData dataWithContentsOfURL:apiURL];
+    NSError *error = nil;
+    NSDictionary *dataDictionary = [NSJSONSerialization
+                                    JSONObjectWithData:jsonData options:0 error:&error];
+
+    for (NSDictionary *bpDictionary in dataDictionary){
+        ReportObject *reportObj = [[ReportObject alloc]initWithId:[[bpDictionary objectForKey:@"ReportId"]integerValue] OriginLatitude:[bpDictionary objectForKey:@"originlat"] DestinationLatitude:[bpDictionary objectForKey:@"destinationlat"] OriginLongitude:[bpDictionary objectForKey:@"originlng"] DestinationLongitude:[bpDictionary objectForKey:@"destinationlng"] Status:[bpDictionary objectForKey:@"reportstatus"] TimeOfReport:[bpDictionary objectForKey:@"timeofreport"]];
+        [self.objectHolderArray addObject:reportObj];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +52,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _Latitude.count;
+    return [self.objectHolderArray count];
 }
 
 
@@ -56,12 +61,13 @@
     static NSString *CellIdentifier = @"TableCell";
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    long row = [indexPath row];
-    
-    cell.LatitudeLabel.text = _Latitude[row];
-    cell.LongitudeLabel.text = _Longitude[row];
-    cell.StatusLabel.text = _Status[row];
+    ReportObject *reportObj = [self.objectHolderArray
+                                 objectAtIndex:indexPath.row];
+    cell.ReportIdLabel.text = [NSString stringWithFormat:@"%d",reportObj.Id];
+    cell.OriginLatitudeLabel.text = reportObj.originlatitude;
+    cell.StatusLabel.text = reportObj.status;
     return cell;
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -72,6 +78,7 @@
         
         long row = [myIndexPath row];
         detailViewController.DetailModal = @[_Latitude[row],_Longitude[row],_Status[row]];
+        
     }
 }
 

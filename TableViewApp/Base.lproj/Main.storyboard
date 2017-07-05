@@ -26,21 +26,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ne6-Zx-XOM">
-                                            <rect key="frame" x="30" y="39" width="42" height="21"/>
+                                            <rect key="frame" x="8" y="7" width="103" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhD-79-FYP">
-                                            <rect key="frame" x="166" y="39" width="42" height="21"/>
+                                            <rect key="frame" x="8" y="36" width="84" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-cj-l0t">
-                                            <rect key="frame" x="292" y="38" width="42" height="21"/>
+                                            <rect key="frame" x="8" y="65" width="72" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -49,9 +49,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="LatitudeLabel" destination="Ne6-Zx-XOM" id="vQj-Ft-k7k"/>
-                                    <outlet property="LongitudeLabel" destination="LhD-79-FYP" id="nFi-ba-uJM"/>
-                                    <outlet property="StatusLabel" destination="0NW-cj-l0t" id="dNy-rT-cHH"/>
+                                    <outlet property="OriginLatitudeLabel" destination="LhD-79-FYP" id="cff-vf-IXh"/>
+                                    <outlet property="ReportIdLabel" destination="Ne6-Zx-XOM" id="kec-fV-Mm3"/>
+                                    <outlet property="StatusLabel" destination="0NW-cj-l0t" id="IVF-lR-7Ji"/>
                                     <segue destination="a9E-q9-4KS" kind="push" identifier="ShowDetails" id="ILf-SW-dY0"/>
                                 </connections>
                             </tableViewCell>
@@ -65,7 +65,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIa-OS-sy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="54"/>
+            <point key="canvasLocation" x="1144.8" y="53.523238380809602"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="E0x-qW-dAh">
@@ -146,9 +146,9 @@
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Zi7-rm-myf"/>
                                     <barButtonItem style="plain" id="1OV-Cc-alI">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IlQ-hW-Spw">
-                                            <rect key="frame" x="293" y="7" width="59" height="30"/>
+                                            <rect key="frame" x="293" y="7" width="78" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Location"/>
+                                            <state key="normal" title="Add Report"/>
                                             <connections>
                                                 <action selector="GetLocation:" destination="Irw-vJ-0Pg" eventType="touchUpInside" id="LcG-Ja-NWh"/>
                                             </connections>
