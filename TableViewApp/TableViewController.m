@@ -76,9 +76,10 @@
         
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
-        long row = [myIndexPath row];
-        detailViewController.DetailModal = @[_Latitude[row],_Longitude[row],_Status[row]];
+        //TODO:
+        ReportObject *reportObj = [self.objectHolderArray objectAtIndex:myIndexPath.row];
         
+        detailViewController.DetailModal = @[reportObj.status,reportObj.originlatitude,reportObj.originlongitude];
     }
 }
 

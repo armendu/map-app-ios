@@ -18,9 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _LatitudeLabel.text = _DetailModal[0];
-    _LongitudeLabel.text = _DetailModal[1];
-    _StatusLabel.text = _DetailModal[2];
+    _ReportIdLabel.text = _DetailModal[0];
+    _OriginLatitudeLabel.text = _DetailModal[1];
+    _OriginLongitudeLabel.text = _DetailModal[2];
     
     self.navigationItem.title = _DetailModal[0];
 }
