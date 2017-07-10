@@ -65,12 +65,12 @@
  Implementing the GetLocation method
  */
 -(IBAction)GetLocation:(id)sender {
-    NSString *post_data = @"test";
+    NSString *post_data = @"googleapiclient=ios&originlat=1.1&originlng=2.2&destinationlat=3.3&destinationlng=4.4&reportstatus=1";
     NSData *postData = [post_data dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://192.168.160.116/android/init.php"]];
+    [request setURL:[NSURL URLWithString:@"http://10.30.0.17/android/report.php"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -82,8 +82,7 @@
         NSLog(@"%@", json);
     }];
     
-    [task resume];
-    
+    [task resume];    
 }
 
 /*

@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *url_string = [NSString stringWithFormat:@"http://192.168.160.116/android/getallreportsjson.php"];
+    NSString *url_string = [NSString stringWithFormat:@"http://10.30.0.17/android/getallreportsjson.php"];
     NSURL *apiURL = [NSURL URLWithString:url_string];
     NSData *jsonData = [NSData dataWithContentsOfURL:apiURL];
     NSError *error = nil;
@@ -63,9 +63,11 @@
     
     ReportObject *reportObj = [self.objectHolderArray
                                  objectAtIndex:indexPath.row];
-    cell.ReportIdLabel.text = [NSString stringWithFormat:@"%d",reportObj.Id];
-    cell.OriginLatitudeLabel.text = reportObj.originlatitude;
+    //cell.ReportIdLabel.text = [NSString stringWithFormat:@"%d",reportObj.Id];
+    cell.OriginLabel.text = [NSString stringWithFormat:@"%@%@%@",reportObj.originlatitude,@", ",reportObj.originlongitude];
+    cell.DestinationLabel.text = [NSString stringWithFormat:@"%@%@%@",reportObj.destinationlatitude,@", ",reportObj.destinationlongitude];
     cell.StatusLabel.text = reportObj.status;
+    cell.TimeOfReport.text = reportObj.timeofreport;
     return cell;
 
 }
@@ -79,7 +81,7 @@
         //TODO:
         ReportObject *reportObj = [self.objectHolderArray objectAtIndex:myIndexPath.row];
         
-        detailViewController.DetailModal = @[reportObj.status,reportObj.originlatitude,reportObj.originlongitude];
+        detailViewController.DetailModal = @[reportObj.originlatitude,reportObj.originlongitude,reportObj.destinationlatitude,reportObj.destinationlongitude,reportObj.timeofreport,reportObj.status];
     }
 }
 

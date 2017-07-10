@@ -10,8 +10,7 @@
 
 @interface TableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *OriginLatitude;
-@property (nonatomic, strong) NSArray *OriginLongitude;
-@property (nonatomic, strong) NSArray *ReportId;
+//@property (nonatomic, strong) NSArray *OriginLatitude;
+//@property (nonatomic, strong) NSArray *OriginLongitude;
 
 @end

@@ -11,10 +11,8 @@
 @interface TableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *ReportIdLabel;
-@property (strong, nonatomic) IBOutlet UILabel *OriginLatitudeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *DestinationLatitudeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *OriginLongitudeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *DestinationLongitudeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *OriginLabel;
+@property (strong, nonatomic) IBOutlet UILabel *DestinationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *StatusLabel;
 @property (strong, nonatomic) IBOutlet UILabel *TimeOfReport;
 

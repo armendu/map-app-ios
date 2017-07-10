@@ -20,14 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _ReportIdLabel.text = _DetailModal[0];
-    _OriginLatitudeLabel.text = _DetailModal[1];
-    _OriginLongitudeLabel.text = _DetailModal[2];
+    //_ReportIdLabel.text = _DetailModal[0];
     
-    self.navigationItem.title = _DetailModal[0];
+    _OriginLabel.text = [NSString stringWithFormat:@"%@%@%@",_DetailModal[0],@", ",_DetailModal[1]];
+    _DestinationLabel.text = [NSString stringWithFormat:@"%@%@%@",_DetailModal[2],@", ",_DetailModal[3]];
+    _TimeOfReport.text = _DetailModal[4];
+    _StatusLabel.text = _DetailModal[5];
     
-    double latitude = [_DetailModal[1] doubleValue];
-    double longitude = [_DetailModal[2] doubleValue];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@%@",@"Report status: ",_DetailModal[5]];
+    
+    double latitude = [_DetailModal[0] doubleValue];
+    double longitude = [_DetailModal[1] doubleValue];
     
     MKCoordinateRegion region = { { 0.0, 0.0}, {0.0, 0.0}};
     region.center.latitude = latitude;
@@ -38,8 +41,17 @@
     
     MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc] init];
     myAnnotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
-    myAnnotation.title = _DetailModal[0];
+    myAnnotation.title = @"Origin";
     [mapViewDetails addAnnotation:myAnnotation];
+    
+    
+    latitude = [_DetailModal[2] doubleValue];
+    longitude = [_DetailModal[3] doubleValue];
+    
+    MKPointAnnotation *myOtherAnnotation = [[MKPointAnnotation alloc] init];
+    myOtherAnnotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    myOtherAnnotation.title = @"Destination";
+    [mapViewDetails addAnnotation:myOtherAnnotation];
     
 }
 
